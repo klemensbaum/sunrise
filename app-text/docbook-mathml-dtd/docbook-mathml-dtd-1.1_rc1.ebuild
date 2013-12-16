@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 inherit sgml-catalog
 
@@ -11,7 +11,7 @@ MY_PV=${PV/_rc/CR}
 
 DESCRIPTION="Docbook DTD for MathML"
 HOMEPAGE="http://www.docbook.org/xml/mathml/"
-SRC_URI="http://www.docbook.org/xml/mathml/${MY_PV}/dbmathml.dtd -> dbmathml-${PV}.dtd"
+SRC_URI="http://www.docbook.org/xml/mathml/${MY_PV}/dbmathml.dtd"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -30,11 +30,10 @@ sgml-catalog_cat_include "/etc/sgml/mathml-docbook-${PV}.cat" \
 	"/usr/share/sgml/docbook/${P#docbook-}/docbook.cat"
 
 src_unpack() {
-	cp "${DISTDIR}"/dbmathml-${PV}.dtd "${S}" || die
+	cp "${DISTDIR}"/${A} "${S}" || die
 }
 
 src_prepare() {
-	mv dbmathml-${PV}.dtd dbmathml.dtd || die
 	cat <<- EOF > docbook.cat || die
 		PUBLIC "-//OASIS//DTD DocBook MathML Module V${MY_PV}//EN" "dbmathml.dtd"
 		SYSTEM "http://www.oasis-open.org/docbook/xml/mathml/1.1CR1/dbmathml.dtd" "dbmathml.dtd"
@@ -43,7 +42,7 @@ src_prepare() {
 
 src_install() {
 	insinto /usr/share/sgml/docbook/${P#docbook-}
-	doins *.cat *.dtd || die
+	doins *.cat *.dtd
 }
 
 pkg_postinst() {
