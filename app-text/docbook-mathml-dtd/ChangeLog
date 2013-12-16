@@ -1,0 +1,11 @@
+# ChangeLog for app-text/docbook-mathml-dtd
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*docbook-mathml-dtd-1.1_rc1 (16 Dec 2013)
+
+  16 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>
+  +docbook-mathml-dtd-1.1_rc1.ebuild, +metadata.xml:
+  New ebuild for bug #349033. Thanks to Samuel BAUER, mgorny and Dennis
+  Schridde.
+
