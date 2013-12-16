@@ -4,6 +4,10 @@
 
   16 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>
   docbook-mathml-dtd-1.1_rc1.ebuild:
+  Fix typo: ${MV_PV} -> ${MY_PV}
+
+  16 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>
+  docbook-mathml-dtd-1.1_rc1.ebuild:
   Remove unneeded '|| die' after sgml-catalog phase hooks
 
   16 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>

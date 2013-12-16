@@ -50,7 +50,7 @@ pkg_postinst() {
 	sgml-catalog_pkg_postinst
 
 	xmlcatalog --noout \
-		--add public "-//OASIS//DTD DocBook MathML Module V${MV_PV}//EN" "file:///usr/share/sgml/docbook/${P#docbook-}/dbmathml.dtd" \
+		--add public "-//OASIS//DTD DocBook MathML Module V${MY_PV}//EN" "file:///usr/share/sgml/docbook/${P#docbook-}/dbmathml.dtd" \
 		--add rewriteSystem "http://www.oasis-open.org/docbook/xml/mathml/1.1CR1" "file:///usr/share/sgml/docbook/${P#docbook-}" \
 		"${EPREFIX}"/etc/xml/docbook \
 	|| die
@@ -61,7 +61,7 @@ pkg_postrm() {
 	sgml-catalog_pkg_postrm
 
 	xmlcatalog --noout \
-		--del "-//OASIS//DTD DocBook MathML Module V${MV_PV}//EN" \
+		--del "-//OASIS//DTD DocBook MathML Module V${MY_PV}//EN" \
 		--del "http://www.oasis-open.org/docbook/xml/mathml/1.1CR1/dbmathml.dtd" \
 		"${EPREFIX}"/etc/xml/docbook \
 	|| die
