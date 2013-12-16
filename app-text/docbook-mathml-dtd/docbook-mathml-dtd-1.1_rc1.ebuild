@@ -47,7 +47,7 @@ src_install() {
 
 pkg_postinst() {
 	build-docbook-catalog || die
-	sgml-catalog_pkg_postinst || die
+	sgml-catalog_pkg_postinst
 
 	xmlcatalog --noout \
 		--add public "-//OASIS//DTD DocBook MathML Module V${MV_PV}//EN" "file:///usr/share/sgml/docbook/${P#docbook-}/dbmathml.dtd" \
@@ -58,7 +58,7 @@ pkg_postinst() {
 
 pkg_postrm() {
 	build-docbook-catalog || die
-	sgml-catalog_pkg_postrm || die
+	sgml-catalog_pkg_postrm
 
 	xmlcatalog --noout \
 		--del "-//OASIS//DTD DocBook MathML Module V${MV_PV}//EN" \
