@@ -19,9 +19,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-text/mathml-xml-dtd"
-RDEPEND="dev-libs/libxml2
+RDEPEND=">=app-text/build-docbook-catalog-1.6
 	app-text/docbook-xml-dtd:4.3
-	>=app-text/build-docbook-catalog-1.6
+	dev-libs/libxml2
 	${DEPEND}"
 
 S=${WORKDIR}
@@ -63,6 +63,5 @@ pkg_postrm() {
 	xmlcatalog --noout \
 		--del "-//OASIS//DTD DocBook MathML Module V${MY_PV}//EN" \
 		--del "http://www.oasis-open.org/docbook/xml/mathml/1.1CR1/dbmathml.dtd" \
-		"${EPREFIX}"/etc/xml/docbook \
-	|| die
+		"${EPREFIX}"/etc/xml/docbook
 }

@@ -2,6 +2,11 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>
+  docbook-mathml-dtd-1.1_rc1.ebuild:
+  Remove redundant '|| die' in pkg_postinst and sort dependencies
+  alphabetically
+
   16 Dec 2013; Klemens Baum (kbwt) <klemensbaum@gmail.com>
   docbook-mathml-dtd-1.1_rc1.ebuild:
   Fix typo: ${MV_PV} -> ${MY_PV}
